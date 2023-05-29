@@ -3,6 +3,10 @@ const bcrypt = require("bcrypt");
 exports.createUser = async (req, res) => {
   try {
     const password = bcrypt.hashSync(req.body.password, 10);
+    let staff = false;
+    if (req.body.userType === "Staff") {
+      staff = true;
+    }
     const users = await db.sequelize.models.User.create({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
@@ -11,7 +15,7 @@ exports.createUser = async (req, res) => {
       userType: req.body.userType,
       createdBy: req.body.createdBy,
       createdOn: new Date(),
-      staff: req.body.staff,
+      staff: staff,
       stafftype: req.body.stafftype,
     });
     res.status(200).json({
@@ -50,6 +54,21 @@ exports.loginUser = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
+    res.status(400).json({
+      success: false,
+      error,
+    });
+  }
+};
+
+exports.getAllUsers = async (req, res) => {
+  try {
+    const users = await db.sequelize.models.User.findAll();
+    res.status(200).json({
+      success: true,
+      users,
+    });
+  } catch (error) {
     res.status(400).json({
       success: false,
       error,
