@@ -21,27 +21,3 @@
     "dialect": "postgres"
   }
 }
-
-// {
-//   "development": {
-//     "username": "postgres",
-//     "password": "amaso123.",
-//     "database": "patientlist",
-//     "host": "localhost",
-//     "dialect": "postgres"
-//   },
-//   "test": {
-//     "username": "postgres",
-//     "password": "amaso123.",
-//     "database": "patientlist",
-//     "host": "localhost",
-//     "dialect": "postgres"
-//   },
-//   "production": {
-//     "username": "postgres",
-//     "password": "amaso123.",
-//     "database": "patientlist",
-//     "host": "localhost",
-//     "dialect": "postgres"
-//   }
-// }
