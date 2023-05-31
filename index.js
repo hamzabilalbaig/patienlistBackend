@@ -6,7 +6,15 @@ const cors = require("cors");
 //middle wares
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
-app.use(cors());
+app.use(
+  cors({
+    allowedHeaders: ["sessionId", "Content-Type"],
+    exposedHeaders: ["sessionId"],
+    origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    preflightContinue: false,
+  })
+);
 
 app.get("/", (req, res) => res.send("Hello World!"));
 app.listen(process.env.PORT, () =>
