@@ -17,7 +17,9 @@ app.listen(process.env.PORT, () =>
 const patientRoutes = require("./routes/patient.routes");
 const userRoutes = require("./routes/user.routes");
 const notesRoutes = require("./routes/notes.routes");
+const templatesRoutes = require("./routes/templates.routes");
 
 app.use("/api/patient", patientRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/notes", notesRoutes);
+app.use("/api/templates", templatesRoutes);
