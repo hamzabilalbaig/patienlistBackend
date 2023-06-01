@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "default",
-    "password": "uhyzB1oJI2PV.",
-    "database": "verceldb",
-    "host": "ep-purple-sun-463987-pooler.us-east-1.postgres.vercel-storage.com",
+    "username": "postgres",
+    "password": "amaso123.",
+    "database": "patientlist",
+    "host": "localhost",
     "dialect": "postgres"
   },
   "test": {
-    "username": "default",
-    "password": "uhyzB1oJI2PV.",
-    "database": "verceldb",
-    "host": "ep-purple-sun-463987-pooler.us-east-1.postgres.vercel-storage.com",
+    "username": "postgres",
+    "password": "amaso123.",
+    "database": "patientlist",
+    "host": "localhost",
     "dialect": "postgres"
   },
   "production": {
-    "username": "default",
-    "password": "uhyzB1oJI2PV.",
-    "database": "verceldb",
-    "host": "ep-purple-sun-463987-pooler.us-east-1.postgres.vercel-storage.com",
+    "username": "postgres",
+    "password": "amaso123.",
+    "database": "patientlist",
+    "host": "localhost",
     "dialect": "postgres"
   }
 }

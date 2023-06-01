@@ -21,3 +21,52 @@
     "dialect": "postgres"
   }
 }
+
+
+{
+  "development": {
+    "username": "default",
+    "password": "uhyzB1oJI2PV.",
+    "database": "verceldb",
+    "host": "ep-purple-sun-463987-pooler.us-east-1.postgres.vercel-storage.com",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "default",
+    "password": "uhyzB1oJI2PV.",
+    "database": "verceldb",
+    "host": "ep-purple-sun-463987-pooler.us-east-1.postgres.vercel-storage.com",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "default",
+    "password": "uhyzB1oJI2PV.",
+    "database": "verceldb",
+    "host": "ep-purple-sun-463987-pooler.us-east-1.postgres.vercel-storage.com",
+    "dialect": "postgres"
+  }
+}
+
+{
+  "development": {
+    "username": "user",
+    "password": "useruser.",
+    "database": "patientlist",
+    "host": "postgresql-129465-0.cloudclusters.net",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "user",
+    "password": "useruser.",
+    "database": "patientlist",
+    "host": "postgresql-129465-0.cloudclusters.net",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "user",
+    "password": "useruser.",
+    "database": "patientlist",
+    "host": "postgresql-129465-0.cloudclusters.net",
+    "dialect": "postgres"
+  }
+}
