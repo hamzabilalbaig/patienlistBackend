@@ -70,3 +70,28 @@
     "dialect": "postgres"
   }
 }
+
+
+{
+  "development": {
+    "username": "postgres",
+    "password": "amaso123.",
+    "database": "postgres",
+    "host": "patientlist.postgres.database.azure.com",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "amaso123.",
+    "database": "postgres",
+    "host": "patientlist.postgres.database.azure.com",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "amaso123.",
+    "database": "postgres",
+    "host": "patientlist.postgres.database.azure.com",
+    "dialect": "postgres"
+  }
+}

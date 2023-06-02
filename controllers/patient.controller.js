@@ -97,3 +97,117 @@ exports.getPatientById = async (req, res) => {
     });
   }
 };
+
+exports.editallbyId = async (req, res) => {
+  try {
+    const patients = await db.sequelize.models.patients.update(
+      {
+        all: req.body.all,
+      },
+      { where: { id: req.params.id } }
+    );
+    res.status(200).json({
+      success: true,
+      patients,
+      message: "patient record fetched successfully",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({
+      error,
+      message: "failed",
+    });
+  }
+};
+exports.editmedsbyId = async (req, res) => {
+  try {
+    const patients = await db.sequelize.models.patients.update(
+      {
+        meds: req.body.meds,
+      },
+      {
+        where: { id: req.params.id },
+      }
+    );
+    res.status(200).json({
+      success: true,
+      patients,
+      message: "patient record fetched successfully",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({
+      error,
+      message: "failed",
+    });
+  }
+};
+exports.editmedhxbyId = async (req, res) => {
+  try {
+    const patients = await db.sequelize.models.patients.update(
+      {
+        medhx: req.body.medhx,
+      },
+      {
+        where: { id: req.params.id },
+      }
+    );
+    res.status(200).json({
+      success: true,
+      patients,
+      message: "patient record fetched successfully",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({
+      error,
+      message: "failed",
+    });
+  }
+};
+exports.editsurghxbyId = async (req, res) => {
+  try {
+    const patients = await db.sequelize.models.patients.update(
+      {
+        surghx: req.body.surghx,
+      },
+      {
+        where: { id: req.params.id },
+      }
+    );
+    res.status(200).json({
+      success: true,
+      patients,
+      message: "patient record fetched successfully",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({
+      error,
+      message: "failed",
+    });
+  }
+};
+exports.editsochxbyId = async (req, res) => {
+  try {
+    const patients = await db.sequelize.models.patients.update(
+      {
+        sochx: req.body.sochx,
+      },
+      {
+        where: { id: req.params.id },
+      }
+    );
+    res.status(200).json({
+      success: true,
+      patients,
+      message: "patient record fetched successfully",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({
+      error,
+      message: "failed",
+    });
+  }
+};
