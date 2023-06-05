@@ -12,8 +12,9 @@ app.listen(port, () =>
   console.log(`Example app listening on port ${process.env.PORT}!`)
 );
 app.get("/", (req, res) => res.send("Hello World! v1"));
+app.get("/joke", (req, res) => res.send("Hello World! v1"));
 
-app.use("/api/home", (req, res) => {
+app.get("/api/home", (req, res) => {
   console.log("hello");
   res.json({ message: "hello" });
 });
