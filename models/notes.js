@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
       userId: DataTypes.INTEGER,
       signed: DataTypes.BOOLEAN,
       signedBy: DataTypes.INTEGER,
+      title: DataTypes.STRING,
     },
     {
       sequelize,

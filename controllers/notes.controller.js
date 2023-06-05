@@ -9,6 +9,7 @@ exports.createNote = async (req, res) => {
       userId: req.body?.userId,
       signed: false,
       signedBy: 1,
+      title: req.body?.title,
     });
     res.status(200).json({
       success: true,
@@ -90,7 +91,11 @@ exports.updateNote = async (req, res) => {
     }
 
     const notes = await db.sequelize.models.Notes.update(
-      { note: firstPart + req.body?.note, type: req.body?.type },
+      {
+        note: firstPart + req.body?.note,
+        type: req.body?.type,
+        title: req.body?.title ?? findnote?.title,
+      },
       { where: { id: req.params.id } }
     );
     res.status(200).json({

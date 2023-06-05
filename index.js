@@ -70,6 +70,6 @@ app.use("/api/bills", billsRouter);
 app.use("/api/billsItems", billsItemsRouter);
 
 app.get("/", (req, res) => res.send("Hello World!"));
-app.listen(process.env.PORT, () =>
+app.listen(process.env.PORT || 3001, () =>
   console.log(`Example app listening on port ${process.env.PORT}!`)
 );
