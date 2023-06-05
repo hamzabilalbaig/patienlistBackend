@@ -24,8 +24,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.use("/api/result", resultRouter);
 // app.use("/api/bills", billsRouter);
 // app.use("/api/billsItems", billsItemsRouter);
-
-app.get("/", (req, res) => res.send("Hello World!"));
-app.listen(process.env.PORT || 3001, () =>
+var port = process.env.PORT || 3000;
+app.listen(port, () =>
   console.log(`Example app listening on port ${process.env.PORT}!`)
 );
+app.get("/", (req, res) => res.send("Hello World!"));
