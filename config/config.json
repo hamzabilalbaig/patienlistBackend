@@ -3,21 +3,30 @@
     "username": "postgres",
     "password": "amaso123.",
     "database": "patientlist",
-    "host": "localhost",
-    "dialect": "postgres"
+    "host": "patientlist.postgres.database.azure.com",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": true
+    }
   },
   "test": {
     "username": "postgres",
     "password": "amaso123.",
     "database": "patientlist",
-    "host": "localhost",
-    "dialect": "postgres"
+    "host": "patientlist.postgres.database.azure.com",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": true
+    }
   },
   "production": {
     "username": "postgres",
     "password": "amaso123.",
     "database": "patientlist",
-    "host": "localhost",
-    "dialect": "postgres"
+    "host": "patientlist.postgres.database.azure.com",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": true
+    }
   }
 }

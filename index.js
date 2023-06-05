@@ -2,7 +2,27 @@ const express = require("express");
 const app = express();
 require("dotenv").config();
 const cors = require("cors");
+// const pg = require("pg");
 
+// const config = {
+//   host: "patientlist.postgres.database.azure.com",
+//   // Do not hard code your username and password.
+//   // Consider using Node environment variables.
+//   user: "postgres",
+//   password: "amaso123.",
+//   database: "patientlist",
+//   port: 5432,
+//   ssl: true,
+// };
+
+// const client = new pg.Client(config);
+
+// client.connect((err) => {
+//   if (err) throw err;
+//   else {
+//     console.log("Connected to postgres! Getting schemas...");
+//   }
+// });
 // Middlewares
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
