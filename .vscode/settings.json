@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "undefined/subscriptions/0d411a5d-4cc5-437c-9b74-7243a8ff7332/resourceGroups/asdf/providers/Microsoft.Web/sites/plbackend",
+  "appService.deploySubpath": "."
+}

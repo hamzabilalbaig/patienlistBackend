@@ -5,69 +5,25 @@ const cors = require("cors");
 // const pg = require("pg");
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
-app.use(function (req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Content-Type, Access-Control-Allow-Headers,token"
-  );
-
-  next();
-});
-// const config = {
-//   host: "patientlist.postgres.database.azure.com",
-//   // Do not hard code your username and password.
-//   // Consider using Node environment variables.
-//   user: "postgres",
-//   password: "amaso123.",
-//   database: "patientlist",
-//   port: 5432,
-//   ssl: true,
-// };
-
-// const client = new pg.Client(config);
-
-// client.connect((err) => {
-//   if (err) throw err;
-//   else {
-//     console.log("Connected to postgres! Getting schemas...");
-//   }
-// });
-// Middlewares
-
-// Enable CORS for all routes
-// app.use(cors());
-
-// Add headers before the routes are defined
-// app.use((req, res, next) => {
-//   res.setHeader(
-//     "Access-Control-Allow-Origin",
-//     "https://elec-patient-records.vercel.app"
-//   );
-//   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-//   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-//   next();
-// });
-
+app.use(bodyParser.urlencoded({ extended: true }));
 // Routes
-const patientRoutes = require("./routes/patient.routes");
-const userRoutes = require("./routes/user.routes");
-const notesRoutes = require("./routes/notes.routes");
-const templatesRoutes = require("./routes/templates.routes");
-const vitalRouter = require("./routes/vitals.routes");
-const resultRouter = require("./routes/results.routes");
-const billsRouter = require("./routes/bills.routes");
-const billsItemsRouter = require("./routes/billsItems.routes");
+// const patientRoutes = require("./routes/patient.routes");
+// const userRoutes = require("./routes/user.routes");
+// const notesRoutes = require("./routes/notes.routes");
+// const templatesRoutes = require("./routes/templates.routes");
+// const vitalRouter = require("./routes/vitals.routes");
+// const resultRouter = require("./routes/results.routes");
+// const billsRouter = require("./routes/bills.routes");
+// const billsItemsRouter = require("./routes/billsItems.routes");
 
-app.use("/api/patient", patientRoutes);
-app.use("/api/user", userRoutes);
-app.use("/api/notes", notesRoutes);
-app.use("/api/templates", templatesRoutes);
-app.use("/api/vitals", vitalRouter);
-app.use("/api/result", resultRouter);
-app.use("/api/bills", billsRouter);
-app.use("/api/billsItems", billsItemsRouter);
+// app.use("/api/patient", patientRoutes);
+// app.use("/api/user", userRoutes);
+// app.use("/api/notes", notesRoutes);
+// app.use("/api/templates", templatesRoutes);
+// app.use("/api/vitals", vitalRouter);
+// app.use("/api/result", resultRouter);
+// app.use("/api/bills", billsRouter);
+// app.use("/api/billsItems", billsItemsRouter);
 
 app.get("/", (req, res) => res.send("Hello World!"));
 app.listen(process.env.PORT || 3001, () =>
