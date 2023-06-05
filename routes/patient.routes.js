@@ -13,14 +13,14 @@ const {
 
 var router = express.Router();
 
-router.post("/patients", createPatientRecord);
-router.put("/patients/:id", editPatientRecord);
-router.get("/getPatientRecords", getPatientRecords);
-router.get("/getPatientById/:id", getPatientById);
-router.put("/patientsAll/:id", editallbyId);
-router.put("/patientsMeds/:id", editmedsbyId);
-router.put("/patientsMedhx/:id", editmedhxbyId);
-router.put("/patientsSurghx/:id", editsurghxbyId);
-router.put("/patientSochx/:id", editsochxbyId);
+router.route("/patients").post(createPatientRecord);
+router.route("/patients/:id").put(editPatientRecord);
+router.route("/getPatientRecords").get(getPatientRecords);
+router.route("/getPatientById/:id").get(getPatientById);
+router.route("/patientsAll/:id").put(editallbyId);
+router.route("/patientsMeds/:id").put(editmedsbyId);
+router.route("/patientsMedhx/:id").put(editmedhxbyId);
+router.route("/patientsSurghx/:id").put(editsurghxbyId);
+router.route("/patientSochx/:id").put(editsochxbyId);
 
 module.exports = router;
