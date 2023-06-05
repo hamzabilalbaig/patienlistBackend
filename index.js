@@ -3,7 +3,16 @@ const app = express();
 require("dotenv").config();
 const cors = require("cors");
 // const pg = require("pg");
+app.use(function (req, res, next) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Content-Type, Access-Control-Allow-Headers,token"
+  );
 
+  next();
+});
 // const config = {
 //   host: "patientlist.postgres.database.azure.com",
 //   // Do not hard code your username and password.
@@ -28,7 +37,7 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
 // Enable CORS for all routes
-app.use(cors());
+// app.use(cors());
 
 // Add headers before the routes are defined
 // app.use((req, res, next) => {
