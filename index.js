@@ -13,20 +13,25 @@ app.listen(port, () =>
 );
 app.get("/", (req, res) => res.send("Hello World! v1"));
 
-const patientRoutes = require("./routes/patient.routes");
-const userRoutes = require("./routes/user.routes");
-const notesRoutes = require("./routes/notes.routes");
-const templatesRoutes = require("./routes/templates.routes");
-const vitalRouter = require("./routes/vitals.routes");
-const resultRouter = require("./routes/results.routes");
-const billsRouter = require("./routes/bills.routes");
-const billsItemsRouter = require("./routes/billsItems.routes");
+app.use("/api/home", () => {
+  console.log("hello");
+  res.json({ message: "hello" });
+});
 
-app.use("/api/patient", patientRoutes);
-app.use("/api/user", userRoutes);
-app.use("/api/notes", notesRoutes);
-app.use("/api/templates", templatesRoutes);
-app.use("/api/vitals", vitalRouter);
-app.use("/api/result", resultRouter);
-app.use("/api/bills", billsRouter);
-app.use("/api/billsItems", billsItemsRouter);
+// const patientRoutes = require("./routes/patient.routes");
+// const userRoutes = require("./routes/user.routes");
+// const notesRoutes = require("./routes/notes.routes");
+// const templatesRoutes = require("./routes/templates.routes");
+// const vitalRouter = require("./routes/vitals.routes");
+// const resultRouter = require("./routes/results.routes");
+// const billsRouter = require("./routes/bills.routes");
+// const billsItemsRouter = require("./routes/billsItems.routes");
+
+// app.use("/api/patient", patientRoutes);
+// app.use("/api/user", userRoutes);
+// app.use("/api/notes", notesRoutes);
+// app.use("/api/templates", templatesRoutes);
+// app.use("/api/vitals", vitalRouter);
+// app.use("/api/result", resultRouter);
+// app.use("/api/bills", billsRouter);
+// app.use("/api/billsItems", billsItemsRouter);
