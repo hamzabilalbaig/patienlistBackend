@@ -13,7 +13,7 @@ app.listen(port, () =>
 );
 app.get("/", (req, res) => res.send("Hello World! v1"));
 
-app.use("/api/home", () => {
+app.use("/api/home", (req, res) => {
   console.log("hello");
   res.json({ message: "hello" });
 });
