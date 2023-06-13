@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       patients.hasMany(models.vitals, { foreignKey: "id" });
       patients.hasMany(models.results, { foreignKey: "id" });
       patients.hasMany(models.bills, { foreignKey: "id" });
+      patients.hasMany(models.orders, { foreignKey: "id" });
     }
   }
   patients.init(
@@ -30,6 +31,9 @@ module.exports = (sequelize, DataTypes) => {
       medhx: DataTypes.STRING,
       surghx: DataTypes.STRING,
       sochx: DataTypes.STRING,
+      mrn: DataTypes.STRING,
+      pcp: DataTypes.STRING,
+      ins: DataTypes.STRING,
     },
     {
       sequelize,

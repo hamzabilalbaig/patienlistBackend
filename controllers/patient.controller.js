@@ -211,3 +211,94 @@ exports.editsochxbyId = async (req, res) => {
     });
   }
 };
+
+exports.editmrnbyId = async (req, res) => {
+  try {
+    const patients = await db.sequelize.models.patients.update(
+      {
+        mrn: req.body.mrn,
+      },
+      {
+        where: { id: req.params.id },
+      }
+    );
+    res.status(200).json({
+      success: true,
+      patients,
+      message: "patient record fetched successfully",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({
+      error,
+      message: "failed",
+    });
+  }
+};
+
+exports.editpcpbyId = async (req, res) => {
+  try {
+    const patients = await db.sequelize.models.patients.update(
+      {
+        pcp: req.body.pcp,
+      },
+      {
+        where: { id: req.params.id },
+      }
+    );
+    res.status(200).json({
+      success: true,
+      patients,
+      message: "patient record fetched successfully",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({
+      error,
+      message: "failed",
+    });
+  }
+};
+
+exports.editinsbyId = async (req, res) => {
+  try {
+    const patients = await db.sequelize.models.patients.update(
+      {
+        ins: req.body.ins,
+      },
+      {
+        where: { id: req.params.id },
+      }
+    );
+    res.status(200).json({
+      success: true,
+      patients,
+      message: "patient record fetched successfully",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({
+      error,
+      message: "failed",
+    });
+  }
+};
+
+exports.deletePatientRecord = async (req, res) => {
+  try {
+    const patients = await db.sequelize.models.patients.destroy({
+      where: { id: req.body.id },
+    });
+    res.status(200).json({
+      success: true,
+      patients,
+      message: "patient record deleted successfully",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({
+      error,
+      message: "failed",
+    });
+  }
+};

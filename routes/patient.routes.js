@@ -9,6 +9,10 @@ const {
   editmedhxbyId,
   editsurghxbyId,
   editsochxbyId,
+  deletePatientRecord,
+  editmrnbyId,
+  editpcpbyId,
+  editinsbyId,
 } = require("../controllers/patient.controller");
 
 var router = express.Router();
@@ -22,5 +26,9 @@ router.route("/patientsMeds/:id").put(editmedsbyId);
 router.route("/patientsMedhx/:id").put(editmedhxbyId);
 router.route("/patientsSurghx/:id").put(editsurghxbyId);
 router.route("/patientSochx/:id").put(editsochxbyId);
+router.route("/patientMRN/:id").put(editmrnbyId);
+router.route("/patientPCP/:id").put(editpcpbyId);
+router.route("/patientINS/:id").put(editinsbyId);
+router.post("/deletePatient", deletePatientRecord);
 
 module.exports = router;

@@ -25,6 +25,8 @@ const vitalRouter = require("./routes/vitals.routes");
 const resultRouter = require("./routes/results.routes");
 const billsRouter = require("./routes/bills.routes");
 const billsItemsRouter = require("./routes/billsItems.routes");
+const pharmacyRouter = require("./routes/pharmacy.routes");
+const ordersRouter = require("./routes/order.routes");
 
 app.use("/api/patient", patientRoutes);
 app.use("/api/user", userRoutes);
@@ -34,6 +36,8 @@ app.use("/api/vitals", vitalRouter);
 app.use("/api/result", resultRouter);
 app.use("/api/bills", billsRouter);
 app.use("/api/billsItems", billsItemsRouter);
+app.use("/api/pharmacy", pharmacyRouter);
+app.use("/api/orders", ordersRouter);
 
 app.listen(port, () =>
   console.log(`Example app listening on port ${process.env.PORT}!`)
