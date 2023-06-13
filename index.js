@@ -6,8 +6,8 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(cors());
-var port = process.env.PORT || 3000;
+app.use(cors());
+var port = process.env.PORT || 3001;
 
 app.get("/", (req, res) => res.send("Hello World! v1"));
 app.get("/joke", (req, res) => res.send("Hello World! v2"));
